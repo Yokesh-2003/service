@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SentiPay AI - User Behavior Monitoring</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="theme-dark">
+  
+  <!-- BACKGROUND GRADIENT BLOB -->
+  <div class="bg-blobs">
+    <div class="blob blob-blue"></div>
+    <div class="blob blob-purple"></div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand" id="btn-brand">
+        <svg class="icon-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M12 8v4"/>
+          <path d="M12 16h.01"/>
+        </svg>
+        <span class="logo-text">SentiPay <span class="text-accent">AI</span></span>
+      </div>
+      <div class="system-status">
+        <span class="pulse-dot green"></span>
+        <span class="status-label">SentiPay AI Engine: Active</span>
+      </div>
+      <div class="header-actions hidden" id="header-user-menu">
+        <div class="user-pill">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=256&auto=format&fit=crop" alt="User Profile" class="avatar">
+          <span class="username">Cheran</span>
+        </div>
+        <button class="btn btn-icon btn-logout" id="btn-logout-nav" title="Log Out">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN APP CONTAINER -->
+  <main class="app-main">
+
+    <!-- LANDING VIEW -->
+    <section id="view-landing" class="app-view active">
+      <div class="landing-grid">
+        <div class="landing-content">
+          <div class="badge-new">⚡ Version 2.4 - Real-Time User Behavior Intelligence</div>
+          <h1 class="landing-title">AI-Powered User Behavior Monitoring for Safer Digital Payments</h1>
+          <p class="landing-lead">SentiPay AI actively models normal behavioral patterns, immediately highlighting anomalies, device spoofing, and fraud vectors in real time before unauthorized funds leave your account.</p>
+          <div class="landing-actions">
+            <button class="btn btn-primary" id="btn-start-user">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Access User Dashboard
+            </button>
+            <button class="btn btn-secondary" id="btn-start-admin">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+              Admin Control Center
+            </button>
+          </div>
+          <div class="landing-features">
+            <div class="feat-item">
+              <div class="feat-icon green">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div class="feat-text">
+                <h4>Biometric Heatmapping</h4>
+                <p>Cognitive modeling of mouse flow, typing speed, and tap intervals.</p>
+              </div>
+            </div>
+            <div class="feat-item">
+              <div class="feat-icon blue">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="feat-text">
+                <h4>Zero-Latency Alerting</h4>
+                <p>Simultaneous processing of security layers in sub-10ms intervals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="landing-visual">
+          <div class="card glass hero-card">
+            <!-- Simulated AI Scan Visualization -->
+            <div class="ai-scanner">
+              <div class="scanner-line"></div>
+              <div class="ai-nodes">
+                <div class="node node-1 pulse"></div>
+                <div class="node node-2 pulse"></div>
+                <div class="node node-3 pulse"></div>
+                <div class="node node-4 pulse"></div>
+              </div>
+              <!-- Shield SVG Inside Card -->
+              <div class="shield-container">
+                <svg class="shield-graphic" viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="shield-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#3b82f6" />
+                      <stop offset="100%" stop-color="#1d4ed8" />
+                    </linearGradient>
+                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feGaussianBlur stdDeviation="5" result="blur" />
+                      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
+                  </defs>
+                  <path d="M50,15 L80,25 L80,55 C80,75 50,88 50,88 C50,88 20,75 20,55 L20,25 Z" fill="url(#shield-grad)" filter="url(#glow)"/>
+                  <path d="M50,22 L73,30 L73,53 C73,69 50,80 50,80 C50,80 27,69 27,53 L27,30 Z" fill="rgba(255,255,255,0.08)"/>
+                  <path d="M42,50 L48,56 L58,44" fill="none" stroke="#22c55e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-bubble">
+                <span class="label">Fraud Shield Rate</span>
+                <span class="val text-accent">99.98%</span>
+              </div>
+              <div class="stat-bubble">
+                <span class="label">Response Time</span>
+                <span class="val">14ms</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKSPACE VIEW (Holds navigation sidebar + subviews) -->
+    <section id="view-workspace" class="app-view hidden">
+      <div class="workspace-layout">
+        
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="workspace-sidebar">
+          <nav class="sidebar-nav">
+            <button class="nav-item active" data-subview="subview-dashboard">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/>
+              </svg>
+              <span>User Dashboard</span>
+            </button>
+            <button class="nav-item" data-subview="subview-risk-analysis">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+              <span>AI Risk Center</span>
+            </button>
+            <button class="nav-item" data-subview="subview-assistant">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+              <span>AI Security Bot</span>
+            </button>
+            <button class="nav-item admin-nav-only" data-subview="subview-admin">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <circle cx="12" cy="11" r="3"/>
+                <path d="M8 17a4 4 0 0 1 8 0"/>
+              </svg>
+              <span>Admin Console</span>
+              <span class="badge badge-pulse red hidden" id="admin-sidebar-alert-badge">1</span>
+            </button>
+          </nav>
+
+          <div class="sidebar-footer">
+            <div class="current-sim-status">
+              <span class="label">Simulated Location:</span>
+              <span class="val text-accent" id="lbl-sim-loc">Chennai, IN</span>
+            </div>
+            <div class="current-sim-device">
+              <span class="label">Simulated Device:</span>
+              <span class="val" id="lbl-sim-dev">iPhone (Trusted)</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- SUBVIEW CONTENT AREA -->
+        <div class="workspace-content">
+
+          <!-- USER DASHBOARD SUBVIEW -->
+          <div id="subview-dashboard" class="subview active">
+            <!-- Welcome Bar -->
+            <div class="dashboard-header">
+              <div>
+                <h2 class="subview-title">Welcome back, Cheran</h2>
+                <p class="subview-subtitle">AI-powered digital payment security and fraud protection panel</p>
+              </div>
+              <div class="dashboard-controls">
+                <button class="btn btn-secondary btn-sm" id="btn-quick-switch-admin">
+                  Switch to Admin View
+                </button>
+              </div>
+            </div>
+
+            <!-- Dashboard Summary Grid -->
+            <div class="summary-grid">
+              
+              <!-- AI Risk Status Card -->
+              <div class="card glass summary-card card-risk-indicator" id="summary-risk-card">
+                <div class="card-glow-element bg-success-glow" id="risk-glow"></div>
+                <div class="card-header-flex">
+                  <span class="card-tag">AI Security Metric</span>
+                  <svg class="card-icon text-success" id="risk-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/><path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                  </svg>
+                </div>
+                <h3 class="card-label">Current Account Risk</h3>
+                <div class="risk-level-display">
+                  <span class="risk-badge bg-success" id="risk-level-badge">🟢 Safe</span>
+                  <span class="risk-score-value" id="risk-score-text">12<span class="percentage">%</span></span>
+                </div>
+                <div class="risk-progress-bar">
+                  <div class="progress-fill bg-success" id="risk-progress-bar-fill" style="width: 12%;"></div>
+                </div>
+                <div class="risk-footer-msg" id="risk-footer-msg">AI Engine reports highly consistent keystroke, latency, and routing signatures.</div>
+              </div>
+
+              <!-- Device Status Card -->
+              <div class="card glass summary-card">
+                <div class="card-header-flex">
+                  <span class="card-tag">Hardware Binding</span>
+                  <svg class="card-icon text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+                  </svg>
+                </div>
+                <h3 class="card-label">Device Security</h3>
+                <div class="device-status-content">
+                  <div class="status-row">
+                    <span class="status-name">Primary Device:</span>
+                    <span class="status-value text-accent" id="dashboard-device-name">iPhone 15 Pro</span>
+                  </div>
+                  <div class="status-row">
+                    <span class="status-name">Trust Verification:</span>
+                    <span class="status-value text-success" id="dashboard-device-status">✓ Fully Trusted</span>
+                  </div>
+                  <div class="status-row">
+                    <span class="status-name">Biometric Match:</span>
+                    <span class="status-value text-success">Pass (FaceID)</span>
+                  </div>
+                </div>
+                <div class="card-footer-action">
+                  <span class="info-text">Last sync: 2 minutes ago</span>
+                </div>
+              </div>
+
+              <!-- Access Log Metadata Card -->
+              <div class="card glass summary-card">
+                <div class="card-header-flex">
+                  <span class="card-tag">Chronological Feed</span>
+                  <svg class="card-icon text-purple" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <h3 class="card-label">Last Successful Session</h3>
+                <div class="session-status-content">
+                  <div class="status-row">
+                    <span class="status-name">Timestamp:</span>
+                    <span class="status-value" id="dashboard-last-login-time">Today, 07:44 PM</span>
+                  </div>
+                  <div class="status-row">
+                    <span class="status-name">Location:</span>
+                    <span class="status-value text-accent">Chennai, India</span>
+                  </div>
+                  <div class="status-row">
+                    <span class="status-name">IP Address:</span>
+                    <span class="status-value">182.74.88.21</span>
+                  </div>
+                </div>
+                <div class="card-footer-action">
+                  <span class="info-text text-success">✓ Verified Geo-Routing</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Grid for tables -->
+            <div class="dashboard-tables-grid">
+              
+              <!-- Transactions Block -->
+              <div class="card glass table-card">
+                <div class="table-card-header">
+                  <h3>Recent Financial Activities</h3>
+                  <span class="table-tag">AI Pre-screened</span>
+                </div>
+                <div class="table-responsive">
+                  <table class="data-table" id="transactions-table">
+                    <thead>
+                      <tr>
+                        <th>Txn ID</th>
+                        <th>Merchant</th>
+                        <th>Amount</th>
+                        <th>Timestamp</th>
+                        <th>Status</th>
+                        <th>AI Risk</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Dynamic rows filled by app.js -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Logins Block -->
+              <div class="card glass table-card">
+                <div class="table-card-header">
+                  <h3>Recent Account Session Logins</h3>
+                  <span class="table-tag">Geo-Correlated</span>
+                </div>
+                <div class="table-responsive">
+                  <table class="data-table" id="logins-table">
+                    <thead>
+                      <tr>
+                        <th>Date & Time</th>
+                        <th>Device</th>
+                        <th>IP Address</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Dynamic rows filled by app.js -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Analytics Charts Section -->
+            <div class="analytics-section">
+              <div class="analytics-grid">
+                
+                <!-- Chart 1: Risk Trend -->
+                <div class="card glass chart-card">
+                  <div class="chart-header">
+                    <div>
+                      <h3>Session Risk Metric Trend</h3>
+                      <p class="chart-desc">Tracks historical anomaly score spikes in the current billing cycle.</p>
+                    </div>
+                    <div class="chart-legend">
+                      <span class="legend-dot bg-accent"></span> Risk Index (0-100)
+                    </div>
+                  </div>
+                  <div class="canvas-wrapper">
+                    <canvas id="chart-risk-trend" width="600" height="220"></canvas>
+                  </div>
+                </div>
+
+                <!-- Chart 2: Geo Analysis -->
+                <div class="card glass chart-card">
+                  <div class="chart-header">
+                    <div>
+                      <h3>Login Frequency by Territory</h3>
+                      <p class="chart-desc">Categorization of access requests across geographical regions.</p>
+                    </div>
+                    <div class="chart-legend">
+                      <span class="legend-dot bg-primary"></span> Safe Sessions
+                      <span class="legend-dot bg-danger"></span> Anomalies
+                    </div>
+                  </div>
+                  <div class="canvas-wrapper">
+                    <canvas id="chart-login-locations" width="600" height="220"></canvas>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- AI RISK CENTER SUBVIEW -->
+          <div id="subview-risk-analysis" class="subview">
+            <h2 class="subview-title">Behavioral Risk Engine Analysis</h2>
+            <p class="subview-subtitle">Detailed audit trail generated by the SentiPay AI heuristic model.</p>
+
+            <div class="risk-center-grid">
+              
+              <!-- Left side: Speedometer and status -->
+              <div class="card glass risk-audit-summary">
+                <h3>Current Engine Verdict</h3>
+                
+                <div class="speedometer-container">
+                  <svg class="speedometer-svg" viewBox="0 0 200 120">
+                    <defs>
+                      <linearGradient id="speed-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#22c55e" />
+                        <stop offset="50%" stop-color="#eab308" />
+                        <stop offset="100%" stop-color="#ef4444" />
+                      </linearGradient>
+                    </defs>
+                    <!-- Speedometer arc -->
+                    <path class="speedometer-bg-arc" d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="#2a3b61" stroke-width="12" stroke-linecap="round"/>
+                    <path class="speedometer-fill-arc" id="speed-fill-arc" d="M20,100 A80,80 0 0,1 180,100" fill="none" stroke="url(#speed-grad)" stroke-width="12" stroke-linecap="round" stroke-dasharray="251.3" stroke-dashoffset="251.3"/>
+                    
+                    <!-- Needle -->
+                    <g class="needle-group" id="speed-needle" style="transform: rotate(0deg); transform-origin: 100px 100px;">
+                      <polygon points="98,100 102,100 100,20" fill="#ffffff" />
+                      <circle cx="100" cy="100" r="8" fill="#3b82f6" stroke="#ffffff" stroke-width="2" />
+                    </g>
+                  </svg>
+                  <div class="speedometer-labels">
+                    <span class="min-label">Safe</span>
+                    <span class="max-label">High Risk</span>
+                  </div>
+                  <div class="speedometer-score">
+                    <span class="score-num" id="audit-score-number">12</span>
+                    <span class="score-lbl">Risk Index</span>
+                  </div>
+                </div>
+
+                <div class="audit-stats">
+                  <div class="audit-stat-item">
+                    <span class="val text-accent" id="audit-confidence-value">98.4%</span>
+                    <span class="lbl">AI Confidence</span>
+                  </div>
+                  <div class="audit-stat-item">
+                    <span class="val text-success" id="audit-level-value">Low Risk</span>
+                    <span class="lbl">Threat Evaluation</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right side: AI Decision Log -->
+              <div class="card glass risk-decision-log">
+                <h3>Decision Logic & Audit Trail</h3>
+                
+                <div class="anomaly-report-box" id="audit-report-box">
+                  <div class="report-header">
+                    <div class="report-badge-status green" id="audit-report-badge">🟢 Normal Access Signature</div>
+                    <span class="report-time" id="audit-report-time">Updated: Just Now</span>
+                  </div>
+                  
+                  <div class="report-body">
+                    <h4 class="report-headline" id="audit-report-headline">Behavior is perfectly aligned with user norms.</h4>
+                    <p class="report-text" id="audit-report-text">The access request matches Cheran's long-term device profiles, typing cadence, and transaction thresholds. No flags have been raised.</p>
+                  </div>
+
+                  <div class="recommended-action-box" id="audit-recommendation-box">
+                    <h5>AI Prescribed Action Plan:</h5>
+                    <p class="action-desc" id="audit-recommendation-text">No action required. Continuously screen active transaction limits.</p>
+                    <div class="action-buttons-container" id="audit-action-buttons">
+                      <button class="btn btn-secondary btn-sm" disabled>Verify Identity</button>
+                      <button class="btn btn-secondary btn-sm" disabled>Freeze Account</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="engine-features-checklist">
+                  <h5>Active Monitoring Modalities</h5>
+                  <ul class="modality-list">
+                    <li class="active">✓ IP Routing Geo-Correlation</li>
+                    <li class="active">✓ Hardware Hash Token Match</li>
+                    <li class="active">✓ Keyboard Cadence & Latency Model</li>
+                    <li class="active">✓ Dynamic Spending Volatility Velocity</li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- AI SECURITY BOT (Preset Assistant) -->
+          <div id="subview-assistant" class="subview">
+            <h2 class="subview-title">SentiPay AI Security Assistant</h2>
+            <p class="subview-subtitle">Interactive AI security advisor. Ask preset questions to learn about behavioral protection.</p>
+
+            <div class="bot-layout card glass">
+              <!-- Left side: Questions Presets -->
+              <div class="bot-presets">
+                <h4>Select a security question:</h4>
+                <div class="preset-buttons">
+                  <button class="btn btn-preset-q" data-q="blocked">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    Why was my transaction blocked?
+                  </button>
+                  <button class="btn btn-preset-q" data-q="high-risk">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+                    Why is my risk score high?
+                  </button>
+                  <button class="btn btn-preset-q" data-q="improve">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    How can I improve account security?
+                  </button>
+                  <button class="btn btn-preset-q" data-q="tips">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Give me generic security tips.
+                  </button>
+                </div>
+              </div>
+
+              <!-- Right side: Chat Window -->
+              <div class="bot-chat-container">
+                <div class="chat-header">
+                  <div class="bot-avatar-badge">
+                    <div class="bot-avatar">AI</div>
+                    <div>
+                      <span class="bot-name">SecurePay Threat Analyzer</span>
+                      <span class="bot-status">🟢 Online & monitoring</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="chat-messages" id="chat-messages-area">
+                  <div class="chat-bubble bot">
+                    Hello Cheran! I am your AI security agent. I continually analyze access requests, typing latency, browser profiles, and locations to secure your bank account. Ask me any question on the left to learn how my neural nets protect your assets.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ADMIN DASHBOARD SUBVIEW -->
+          <div id="subview-admin" class="subview">
+            <h2 class="subview-title">SentiPay AI Security Operations Center (SOC)</h2>
+            <p class="subview-subtitle">Global administrative interface for monitoring transactions, security metrics, and live alerts.</p>
+
+            <!-- Admin Stats Row -->
+            <div class="admin-stats-grid">
+              <div class="card glass admin-stat-card">
+                <span class="stat-title">Total Active Accounts</span>
+                <span class="stat-number">1,429</span>
+                <span class="stat-meta text-success">✓ 100% online</span>
+              </div>
+              <div class="card glass admin-stat-card">
+                <span class="stat-title">Average System Risk Score</span>
+                <span class="stat-number" id="admin-avg-risk">14%</span>
+                <span class="stat-meta text-success">All patterns normal</span>
+              </div>
+              <div class="card glass admin-stat-card">
+                <span class="stat-title">Flagged Accounts (High-Risk)</span>
+                <span class="stat-number text-danger" id="admin-high-risk-count">0</span>
+                <span class="stat-meta" id="admin-high-risk-meta">No actions pending</span>
+              </div>
+            </div>
+
+            <!-- Admin Panels Split -->
+            <div class="admin-panels-grid">
+              
+              <!-- Live Fraud Alerts Feed (Left) -->
+              <div class="card glass admin-feed-card">
+                <div class="card-header-flex">
+                  <div>
+                    <h3>Real-time Alerts Feed</h3>
+                    <p class="panel-desc">Flashing live notifications from AI anomaly filters.</p>
+                  </div>
+                  <span class="pulse-dot red"></span>
+                </div>
+                
+                <div class="admin-alerts-feed-container" id="admin-alerts-feed">
+                  <!-- Dynamic Alerts will appear here -->
+                  <div class="no-alerts-placeholder" id="no-alerts-placeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="placeholder-icon">
+                      <circle cx="12" cy="12" r="10"/><path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                    </svg>
+                    <p>No high-risk activities detected. The system is operating normally.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- User List Panel (Right) -->
+              <div class="card glass admin-users-card">
+                <div class="card-header-flex gap-2">
+                  <h3>Active User Directory</h3>
+                  <div class="admin-search-wrapper">
+                    <input type="text" id="admin-user-search" placeholder="Search account ID, name..." class="input-search">
+                  </div>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="data-table admin-users-table" id="admin-users-table">
+                    <thead>
+                      <tr>
+                        <th>Customer ID</th>
+                        <th>Full Name</th>
+                        <th>Last Verified Location</th>
+                        <th>Device Trust</th>
+                        <th>Risk Metric</th>
+                        <th>Status Badge</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Dynamic rows filled by app.js -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 🚨 SMART ALERT SYSTEM OVERLAY 🚨 -->
+  <div id="smart-alert-overlay" class="alert-overlay hidden">
+    <!-- Visual background pulsing elements -->
+    <div class="emergency-pulsar"></div>
+
+    <div class="alert-modal glass">
+      <div class="alert-modal-header">
+        <div class="alarm-bell-container">
+          <svg class="icon-bell animate-wiggle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+        </div>
+        <div class="alert-title-group">
+          <h2 class="alert-title">SECURITY EMERGENCY TRIGGERED</h2>
+          <p class="alert-subtitle">SentiPay AI Behavioral Risk Filter</p>
+        </div>
+      </div>
+
+      <div class="alert-grid-details">
+        <!-- Visual Map Placeholder / Danger node connection -->
+        <div class="alert-visual-map">
+          <div class="map-connection-overlay">
+            <div class="map-node node-chennai">
+              <span class="node-pulse green"></span>
+              <span class="node-label">Normal: Chennai</span>
+            </div>
+            <div class="map-line-connector"></div>
+            <div class="map-node node-japan">
+              <span class="node-pulse red"></span>
+              <span class="node-label">Threat: Kyoto, JP</span>
+            </div>
+          </div>
+          <div class="map-bg-texture"></div>
+        </div>
+
+        <!-- Metric and details -->
+        <div class="alert-details-content">
+          <div class="alert-metric-row">
+            <div class="metric-item danger">
+              <span class="m-val">High Risk</span>
+              <span class="m-lbl">Risk Classification</span>
+            </div>
+            <div class="metric-item danger">
+              <span class="m-val" id="alert-card-score">94%</span>
+              <span class="m-lbl">Threat Index</span>
+            </div>
+            <div class="metric-item text-white">
+              <span class="m-val">97.8%</span>
+              <span class="m-lbl">AI Confidence</span>
+            </div>
+          </div>
+
+          <div class="alert-specs-list">
+            <div class="spec-row">
+              <span class="spec-lbl">Location Identified</span>
+              <span class="spec-val text-danger">Kyoto, Japan (IP: 210.140.10.34)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-lbl">Device Fingerprint</span>
+              <span class="spec-val text-warning">Unknown (UserAgent: Mozilla/5.0 Chrome/Linux)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-lbl">Biometric Check</span>
+              <span class="spec-val text-danger">FAIL (Inconsistent mouse velocity & keystrokes)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-lbl">AI Threat Logic</span>
+              <span class="spec-val text-white" id="alert-reason-text">AI engine detected an unusual login from a new country using an unknown device, routing outside normal geographical boundaries.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="alert-actions-panel">
+        <button class="btn btn-danger btn-alert-action" id="btn-alert-freeze">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Freeze Account
+        </button>
+        <button class="btn btn-warning btn-alert-action" id="btn-alert-block-device">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          Block Device
+        </button>
+        <button class="btn btn-secondary btn-alert-action" id="btn-alert-logout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+        Logout All Sessions
+        </button>
+        <button class="btn btn-secondary btn-alert-action text-danger" id="btn-alert-report">
+          Report Fraud
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 📱 SIMULATED MOBILE NOTIFICATION OVERLAY 📱 -->
+  <div id="mobile-notification-container" class="mobile-notification-wrapper hidden">
+    <div class="mobile-device-header">
+      <span class="time-now">19:54</span>
+      <span class="notch"></span>
+      <div class="signals">
+        <span>5G</span>
+        <svg class="icon-battery" viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+          <rect x="2" y="7" width="16" height="10" rx="2" ry="2"/>
+          <line x1="22" y1="11" x2="22" y2="13"/>
+        </svg>
+      </div>
+    </div>
+    <div class="mobile-notification-bubble card glass">
+      <div class="notif-header">
+        <svg class="notif-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        <span class="notif-title">SentiPay AI ALERT</span>
+        <span class="notif-time">now</span>
+      </div>
+      <div class="notif-body">
+        <h4>🚨 Unauthorized Login Attempt Detected</h4>
+        <p>A login was requested from Kyoto, Japan using an unrecognized Chrome device. Is this you?</p>
+      </div>
+      <div class="notif-actions">
+        <button class="btn btn-danger btn-xs" id="btn-mobile-no">No, Block Session</button>
+        <button class="btn btn-secondary btn-xs" id="btn-mobile-yes">Yes, Allow</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🎛️ FLOATING DEMO CONTROLLER PANEL 🎛️ -->
+  <div class="demo-controller-widget">
+    <div class="demo-controller-header">
+      <svg class="icon-controller" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polygon points="5 3 19 12 5 21 5 3"/>
+      </svg>
+      <h4>Interactive Demo Simulator</h4>
+      <button class="btn-toggle-demo-minimize" id="btn-toggle-demo-min" title="Toggle Panel">-</button>
+    </div>
+    <div class="demo-controller-body" id="demo-body">
+      <p class="demo-desc">Use this console to execute the behavior evaluation sequence. Follow each step.</p>
+      
+      <div class="demo-steps-timeline">
+        <div class="demo-step active" id="demo-step-1" data-step="1">
+          <div class="step-num">1</div>
+          <div class="step-details">
+            <h5>State: Normal</h5>
+            <p>Logged in from Chennai on Trusted Device. Risk: 12% (Safe).</p>
+          </div>
+        </div>
+        <div class="demo-step" id="demo-step-2" data-step="2">
+          <div class="step-num">2</div>
+          <div class="step-details">
+            <h5>Trigger Alert</h5>
+            <p>Simulate a concurrent session from Kyoto, Japan (Unknown device).</p>
+          </div>
+        </div>
+        <div class="demo-step" id="demo-step-3" data-step="3">
+          <div class="step-num">3</div>
+          <div class="step-details">
+            <h5>Resolution</h5>
+            <p>User mitigates threat. Admin dashboard displays alert live.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-controls-footer">
+        <button class="btn btn-primary w-100" id="btn-demo-next">Start Demo Step 1</button>
+        <button class="btn btn-secondary btn-sm" id="btn-demo-reset">Reset Simulation</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
